@@ -5,12 +5,8 @@
      5                                  _start:
      6 00000000 90                      	nop
      7                                  ; Put your experiments between the two nops...
-     8 00000001 BB[00000000]            	mov ebx, Snippet
-     9 00000006 B808000000              	mov eax, 8
-    10 0000000B 67800320                DoMore: add byte [ebx], 32
-    11 0000000F FFC3                    	inc ebx
-    12 00000011 FFC8                    	dec eax
-    13 00000013 75F6                    	jnz DoMore
-    14                                  	
-    15                                  ; Put your experiments between the two nops...
-    16 00000015 90                      	nop
+     8 00000001 B0D6                    	mov al, -42
+     9 00000003 0FBED8                  	movsx ebx, al 		;plz: "(gdb) p/d $al/$ax/$ebx/$bx/$bl/$bh/$rbx" and so on
+    10                                  	
+    11                                  ; Put your experiments between the two nops...
+    12 00000006 90                      	nop

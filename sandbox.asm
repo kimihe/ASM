@@ -5,12 +5,8 @@ section .text
 _start:
 	nop
 ; Put your experiments between the two nops...
-	mov ebx, Snippet
-	mov eax, 8
-DoMore: add byte [ebx], 32
-	inc ebx
-	dec eax
-	jnz DoMore
+	mov al, -42
+	movsx ebx, al 		;plz: "(gdb) p/d $al/$ax/$ebx/$bx/$bl/$bh/$rbx" and so on
 	
 ; Put your experiments between the two nops...
 	nop
