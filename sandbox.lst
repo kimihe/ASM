@@ -5,8 +5,13 @@
      5                                  _start:
      6 00000000 90                      	nop
      7                                  ; Put your experiments between the two nops...
-     8 00000001 B0D6                    	mov al, -42
-     9 00000003 0FBED8                  	movsx ebx, al 		;plz: "(gdb) p/d $al/$ax/$ebx/$bx/$bl/$bh/$rbx" and so on
-    10                                  	
-    11                                  ; Put your experiments between the two nops...
-    12 00000006 90                      	nop
+     8 00000001 B8BF010000              	mov eax, 447
+     9 00000006 BBCB060000              	mov ebx, 1739
+    10 0000000B F7E3                    	mul ebx		;No CF
+    11                                  	
+    12 0000000D B8FFFFFFFF              	mov eax, 0FFFFFFFFh
+    13 00000012 BB723B0000              	mov ebx, 03B72h
+    14 00000017 F7E3                    	mul ebx		;CF is set
+    15                                  	
+    16                                  ; Put your experiments between the two nops...
+    17 00000019 90                      	nop

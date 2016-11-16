@@ -5,8 +5,13 @@ section .text
 _start:
 	nop
 ; Put your experiments between the two nops...
-	mov al, -42
-	movsx ebx, al 		;plz: "(gdb) p/d $al/$ax/$ebx/$bx/$bl/$bh/$rbx" and so on
+	mov eax, 447
+	mov ebx, 1739
+	mul ebx		;No CF
+	
+	mov eax, 0FFFFFFFFh
+	mov ebx, 03B72h
+	mul ebx		;CF is set
 	
 ; Put your experiments between the two nops...
 	nop
