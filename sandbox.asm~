@@ -7,11 +7,11 @@ _start:
 ; Put your experiments between the two nops...
 	mov eax, 447
 	mov ebx, 1739
-	mul ebx
+	mul ebx		;No CF
 	
 	mov eax, 0FFFFFFFFh
 	mov ebx, 03B72h
-	mul ebx
+	mul ebx		;CF is set
 	
 ; Put your experiments between the two nops...
 	nop
